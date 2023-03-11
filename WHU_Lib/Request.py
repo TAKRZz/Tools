@@ -30,10 +30,9 @@ def getBook(stu_id=Stu_id):
         Str_content = re.search(pattern_content, Str_temp).group(0)
         Str_book = re.search(pattern_book, Str_content).group(0)
         Str_user = re.search(pattern_user, Str_content).group(0)
-    except :
+    except AttributeError as n:
         return "不在运行时间内"
 
     return Str_book + '\n' + Str_user
-
 
 # print(getBook())
